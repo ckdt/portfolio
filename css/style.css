@@ -171,10 +171,10 @@ img {
 
 .footer{
   position: fixed;
-  left: 0;
+  right: 0;
   bottom: 0;
   z-index: 999;
-  padding: 2rem 5.5rem;
+  padding:2rem 4rem;  
 }
 
 
