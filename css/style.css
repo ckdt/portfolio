@@ -275,10 +275,11 @@ img {
     --gridlines: 12;
   }
   .branding__logo{
-    width: calc((100vw / var(--gridlines))*6);
+    width: calc((100vw / var(--gridlines))*5);
   }
   .branding__logo__image{
-    width: calc((100vw / var(--gridlines))*6);
+    width: calc((100vw / var(--gridlines))*5);
+    height: auto;
   }
 
   
