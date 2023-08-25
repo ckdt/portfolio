@@ -10,7 +10,7 @@
   --type-primary: 'Manrope', sans-serif;
   --type-secondary: 'IBM Plex Mono', monospace;
   --type-base-size: 16px;
-  --sizing-step: calc(100vw / 18);
+  --gridlines: 24;
 }
 
 * {
@@ -25,7 +25,7 @@ html {
 
 body{
   background: linear-gradient(90deg, var(--brand-light-alt) 1%, transparent 1%) 1px 0, var(--brand-light);
-  background-size: calc(100vw / 18) 1px;
+  background-size: calc(100vw / var(--gridlines)) 1px;
 
   color: var(--brand-dark);
   font-family: var(--type-primary);
@@ -54,7 +54,7 @@ a:hover, a:active {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 2rem calc(100vw / 18);
+  padding: 2rem calc(100vw / var(--gridlines));
   /*padding: 2rem 5rem;*/
   animation: slideIn 0.75s 0s ease both;
 }
@@ -86,7 +86,7 @@ a:hover, a:active {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 2rem calc(100vw / 18);
+  padding: 2rem calc(100vw / var(--gridlines));
 }
 
 .branding__logo{
@@ -94,7 +94,7 @@ a:hover, a:active {
 }
 
 .branding__logo__image{
-  width: calc((100vw / 18)*8);
+  width: calc((100vw / var(--gridlines))*8);
   height: auto;
   animation: slideIn 0.75s 0.25s ease-out;
 }
@@ -128,7 +128,7 @@ a:hover, a:active {
   top: 0;
   left: 0;
   height: 100vh;
-  padding: 2rem 2rem 2rem calc(100vw / 18);
+  padding: 2rem 2rem 2rem calc(100vw / var(--gridlines));
 }
 
 .details__title{
@@ -157,7 +157,7 @@ a:hover, a:active {
 .work__visuals{
   min-height: 100vh;
   margin:0;
-  padding: 0 calc(100vw / 18) 0 0 ;
+  padding: 0 calc(100vw / var(--gridlines)) 0 0 ;
 }
 
 .visual__item {
@@ -267,6 +267,52 @@ img {
   
 }
 
+
+
+
+@media (max-width: 800px) {
+  :root {
+    --gridlines: 12;
+  }
+  .branding__logo{
+    width: calc((100vw / var(--gridlines))*6);
+  }
+  .branding__logo__image{
+    width: calc((100vw / var(--gridlines))*6);
+  }
+
+  
+  .work {
+    grid-template-columns: 1fr;
+    height: auto;
+    padding: calc(100vw / var(--gridlines));
+  }
+  .work__visuals,
+  .work__details{
+    position: relative;
+    min-height: none;
+    height: auto;
+    margin-bottom: 1rem;
+    padding: 0;
+  }
+
+  .work--invert .work__details{
+    order:1;
+  }
+  .work--invert .work__visuals{
+    order:2;
+    
+  }
+  .visual__item {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1440px) {
+  :root {
+    --gridlines: 18;
+  }
+}
 
 
 
