@@ -159,6 +159,9 @@ a:hover, a:active {
   margin:0;
   padding: 0 calc(100vw / var(--gridlines)) 0 0 ;
 }
+.work--invert .work__visuals{
+  padding: 0 0 0 calc(100vw / var(--gridlines)) ;
+}
 
 .visual__item {
   margin-bottom: 5rem;
@@ -246,9 +249,9 @@ img {
 
 @media (prefers-color-scheme: dark) {
   body{
-
     background: linear-gradient(90deg, var(--brand-dark-alt) 1%, transparent 1%) 1px 0, var(--brand-dark);
-    background-size: 5rem 1px;
+    background-size: calc(100vw / var(--gridlines)) 1px;
+
     color: var(--brand-light);
   }
 
