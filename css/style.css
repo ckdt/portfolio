@@ -41,6 +41,8 @@ a:hover, a:active {
   color: var(--brand-dark-alt);
 }
 
+/* Page: Home */
+
 .header{
   font-family: var(--type-secondary);
   font-size: 0.75rem;
@@ -172,6 +174,67 @@ img {
   vertical-align: bottom;
 }
 
+
+/* Page: Experiments */
+
+.experiments{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 3000px;
+  height: 2400px;
+
+  display: grid;
+  padding: 5rem;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+
+  gap: 10rem;
+  touch-action: none;
+}
+
+.experiment__link{
+  display: block;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.experiment__img{
+  max-width: 100%;
+  max-height: 500px;
+  transition: opacity 0.25s, transform 0.25s, box-shadow 0.25s;
+  box-shadow: 0 0 16px rgba(0,0,0,0.2);
+}
+
+.page__scrapbook{
+  background: var(--brand-light);
+  background-image: radial-gradient(var(--brand-green) 1px, transparent 0);
+  background-size: calc(100vw / var(--gridlines)) calc(100vw / var(--gridlines));
+  background-position: calc((100vw / var(--gridlines))/2) calc((100vw / var(--gridlines))/2) ;
+}
+
+.page__scrapbook .header__navigation,
+.page__scrapbook .header__contact{
+  position: relative;
+  z-index: 9 !important;
+}
+
+.page__scrapbook.hovered .experiment__img{
+  opacity: 0.1;
+}
+
+.page__scrapbook.hovered a.hovered .experiment__img{
+  opacity: 1;
+  transform: scale(1.1);
+  box-shadow: 0 0 16px rgba(0,0,0,0.3);
+}
+
+/* end scrapbook */
+
+
 .footer{
   position: fixed;
   right: 0;
@@ -268,6 +331,14 @@ img {
     fill: var(--brand-light);
   }
   
+
+  .page__scrapbook{
+    background: var(--brand-dark);
+    background-image: radial-gradient(var(--brand-green) 1px, transparent 0);
+    background-size: calc(100vw / var(--gridlines)) calc(100vw / var(--gridlines));
+    background-position: calc((100vw / var(--gridlines))/2) calc((100vw / var(--gridlines))/2) ;
+  }
+
 }
 
 
@@ -317,6 +388,8 @@ img {
     --gridlines: 18;
   }
 }
+
+
 
 
 
